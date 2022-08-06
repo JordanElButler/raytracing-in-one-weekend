@@ -1,1 +1,1 @@
-An implementation of Raytracing in One Weekend.
+An implementation of Ray Tracing in One Weekend and Ray Tracing the Next Week.
