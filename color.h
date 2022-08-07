@@ -10,6 +10,10 @@ void write_color(int* buffer, int i, int j, int image_width, int image_height, c
     auto g = pixel_color.y();
     auto b = pixel_color.z();
 
+    if (r != r) r = 0.0;
+    if (g != g) g = 0.0;
+    if (b != b) b = 0.0;
+
     auto scale = 1.0 / samples_per_pixel;
     r = sqrt(scale * r);
     g = sqrt(scale * g);
@@ -21,6 +25,7 @@ void write_color(int* buffer, int i, int j, int image_width, int image_height, c
 }
 
 void output_ppm(int *buffer, int image_width, int image_height) {
+
     std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
     for (int j = image_height-1; j >= 0; --j) {
